@@ -124,6 +124,10 @@ resource "google_container_cluster" "cluster" {
     }
   }
 
+  release_channel {
+    channel = var.release_channel
+  }
+
   lifecycle {
     ignore_changes = [
       # Since we provide `remove_default_node_pool = true`, the `node_config` is only relevant for a valid construction of
@@ -154,6 +158,7 @@ resource "google_container_cluster" "cluster" {
       key_name = database_encryption.value
     }
   }
+
 }
 
 # ---------------------------------------------------------------------------------------------------------------------

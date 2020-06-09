@@ -209,3 +209,9 @@ variable "services_secondary_range_name" {
   type        = string
   default     = null
 }
+
+variable "release_channel" {
+  description = "The release channel to use"
+  type        = string
+  default     = "UNSPECIFIED"
+}
